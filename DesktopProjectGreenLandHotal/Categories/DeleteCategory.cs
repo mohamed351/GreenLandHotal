@@ -17,7 +17,7 @@ namespace DesktopProjectGreenLandHotal.Categories
         public DeleteCategory()
         {
             InitializeComponent();
-            categoriesRepository = new CategoryRepository(new GreenLandProjectEntities())
+            categoriesRepository = new CategoryRepository(new GreenLandProjectEntities());
         }
 
         private void DeleteCategory_Load(object sender, EventArgs e)
@@ -28,14 +28,19 @@ namespace DesktopProjectGreenLandHotal.Categories
 
         }
 
-        private void SelectCategory()
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (comboUsers.SelectedValue != null)
             {
                 Category category = (Category)comboUsers.SelectedItem;
-           
-          
-            
+                category.IsDeleted = true;
+                categoriesRepository.Edit(category);
+                if (categoriesRepository.SaveChanges() > 0)
+                {
+                    MessageBox.Show("The Category has been Deleted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
 
             }
             else

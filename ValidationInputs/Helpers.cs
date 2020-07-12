@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,5 +29,10 @@ namespace WindowsFormsUtilities
 
             button.Enabled = false;
         }
+        public static void FillData<T>(Func<T,bool> func,IRepository<T,int> repository, DataGridView view)where T:class    
+        {
+            view.DataSource = repository.GetByCondition(func).ToList();
+        }
+       
     }
 }
