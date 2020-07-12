@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="66e983b353dc48a3a343e4998db7df3d" Name="Diagram1">
+        <EntityTypeShape EntityType="GreenLandProjectModel.AspNetRole" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.AspNetUser" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.Category" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.InvoiceDetail" Width="1.5" PointX="12.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.Invoice" Width="1.5" PointX="10.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.Reservation" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenLandProjectModel.Room" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="GreenLandProjectModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenLandProjectModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenLandProjectModel.FK_Reservations_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenLandProjectModel.FK_Rooms_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenLandProjectModel.FK_InvoiceDetails_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenLandProjectModel.FK_Invoices_Reservations" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenLandProjectModel.FK_Reservations_Rooms" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenLandProjectModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

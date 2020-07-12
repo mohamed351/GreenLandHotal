@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Repositories
+{
+   public interface IRepository<T, ID> where T:class
+    {
+        void Add(T entity);
+        void Edit(T entity);
+        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetByConditionAsync(Func<T,bool> func);
+        IEnumerable<T> GetByCondition(Func<T, bool> func);
+        Task<T> GetByIDAsync(ID id);
+        T GetByID(ID id);
+        void Delete(T entity);
+        int SaveChanges();
+        Task<int> SaveChangesAsync();
+        
+    }
+}
