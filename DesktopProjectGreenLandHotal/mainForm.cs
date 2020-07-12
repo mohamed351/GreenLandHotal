@@ -30,6 +30,7 @@ namespace DesktopProjectGreenLandHotal
             this.UserPanel.Visible = false;
             this.roomPanel.Visible = false;
             this.CategoryPanel.Visible = false;
+            this.panelReservaion.Visible = false;
         }
         private void ShowThePanel(Panel panel)
         {
@@ -123,6 +124,25 @@ namespace DesktopProjectGreenLandHotal
         private void button9_Click(object sender, EventArgs e)
         {
             openChildForm(new DeleteCategory());
+            HideAll();
+        }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            HideAll();
+            ShowThePanel(this.panelReservaion);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CreateRoomFrm());
+            HideAll();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EditRoomFrm());
             HideAll();
         }
     }

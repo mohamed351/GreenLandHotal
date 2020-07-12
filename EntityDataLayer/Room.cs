@@ -11,7 +11,8 @@ namespace EntityDataLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Room
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,14 +22,21 @@ namespace EntityDataLayer
         }
     
         public int ID { get; set; }
+        [Required]
         public int NumberOfPeople { get; set; }
+        [Required]
         public int CategoryID { get; set; }
         public byte[] Image { get; set; }
+        [Required]
         public int NumberOfBeds { get; set; }
+        [Required]
         public bool IsAvailable { get; set; }
+        [Required]
         public int Number { get; set; }
         public bool IsDeleted { get; set; }
+        [Required]
         public decimal Price { get; set; }
+        [Required]
         public Nullable<bool> IsEmpty { get; set; }
     
         public virtual Category Category { get; set; }

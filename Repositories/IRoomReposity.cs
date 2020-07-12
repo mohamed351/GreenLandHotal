@@ -9,6 +9,6 @@ namespace Repositories
 {
    public interface IRoomReposity :IRepository<Room,int>
     {
-
+         bool CheckThereIsARoom(int Number);
     }
 }
