@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GreenLandProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GreenLandProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -81,7 +81,7 @@
           </Key>
           <Property Name="UserID" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="RoomID" Type="int" Nullable="false" />
-          <Property Name="ReservationDate" Type="datetime" Nullable="false" />
+          <Property Name="ReservationDate" Type="date" Nullable="false" />
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
           <Property Name="TotalPrice" Type="decimal" Precision="9" Scale="2" Nullable="false" />
@@ -94,10 +94,13 @@
           </Key>
           <Property Name="UserID" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="RoomID" Type="int" Nullable="false" />
-          <Property Name="ReservationDate" Type="datetime" Nullable="false" />
-          <Property Name="ComingDate" Type="datetime" Nullable="false" />
-          <Property Name="DepatureDate" Type="datetime" Nullable="false" />
+          <Property Name="ReservationDate" Type="date" Nullable="false" />
+          <Property Name="ComingDate" Type="datetime" />
+          <Property Name="DepatureDate" Type="date" Nullable="false" />
           <Property Name="Checkout" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="LeavingDate" Type="datetime" />
         </EntityType>
         <EntityType Name="Rooms">
           <Key>
@@ -282,8 +285,7 @@
             <End Role="Rooms" EntitySet="Rooms" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GreenLandProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -364,7 +366,7 @@
           </Key>
           <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RoomID" Type="Int32" Nullable="false" />
-          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="InvoiceDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TotalPrice" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
@@ -379,13 +381,16 @@
           </Key>
           <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RoomID" Type="Int32" Nullable="false" />
-          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ComingDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DepatureDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ComingDate" Type="DateTime" Precision="3" Nullable="true" />
+          <Property Name="DepatureDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Checkout" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="AspNetUser" Relationship="Self.FK_Reservations_AspNetUsers" FromRole="Reservations" ToRole="AspNetUsers" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Reservations" FromRole="Reservations" ToRole="Invoices" />
           <NavigationProperty Name="Room" Relationship="Self.FK_Reservations_Rooms" FromRole="Reservations" ToRole="Rooms" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="LeavingDate" Type="DateTime" Precision="3" Nullable="true" />
         </EntityType>
         <EntityType Name="Room">
           <Key>
@@ -630,6 +635,9 @@
           <EntitySetMapping Name="Reservations">
             <EntityTypeMapping TypeName="GreenLandProjectModel.Reservation">
               <MappingFragment StoreEntitySet="Reservations">
+                <ScalarProperty Name="LeavingDate" ColumnName="LeavingDate" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="RoomID" ColumnName="RoomID" />
                 <ScalarProperty Name="ReservationDate" ColumnName="ReservationDate" />

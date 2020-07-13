@@ -1,0 +1,36 @@
+﻿@model EntityDataLayer.Room
+@{
+    ViewBag.Title = "_RoomItem";
+}
+
+<div class="room-item">
+     
+    <img src="data:image/png;base64,@(Convert.ToBase64String(Model.Image))"   />
+    <div class="ri-text">
+        <h4>@Model.Category.CategoryName </h4>
+        <h3>@Model.Price<span>/Pernight</span></h3>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td class="r-o">Capacity:</td>
+                    <td>Max persion @Model.NumberOfPeople</td>
+                </tr>
+                <tr>
+                    <td class="r-o">Bed:</td>
+                    <td>@Model.NumberOfBeds</td>
+                </tr>
+
+                <tr>
+                    <td class="r-o">Available:</td>
+                    <td>@Model.IsAvailable</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+     
+        @Html.ActionLink("More Details","Details",new { ID = Model.ID },new { @class="primary-btn hidden-btn" })
+    </div>
+</div>
+

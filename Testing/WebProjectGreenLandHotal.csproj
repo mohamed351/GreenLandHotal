@@ -51,6 +51,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageResizer.4.2.5\lib\net45\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.DiskCache, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageResizer.Plugins.DiskCache.4.2.5\lib\net45\ImageResizer.Plugins.DiskCache.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.PrettyGifs, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageResizer.Plugins.PrettyGifs.4.2.5\lib\net45\ImageResizer.Plugins.PrettyGifs.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -164,6 +173,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,18 +182,104 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Class1.cs" />
     <Compile Include="ViewModels\Class2.cs" />
+    <Compile Include="ViewModels\ReservationViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\elegant-icons.css" />
+    <Content Include="Content\css\flaticon.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\css\jquery-ui.min.css" />
+    <Content Include="Content\css\magnific-popup.css" />
+    <Content Include="Content\css\nice-select.css" />
+    <Content Include="Content\css\owl.carousel.min.css" />
+    <Content Include="Content\css\slicknav.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\ElegantIcons.svg" />
+    <Content Include="Content\fonts\Flaticon.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\images\greenLand.png" />
+    <Content Include="Content\img\about\about-1.jpg" />
+    <Content Include="Content\img\about\about-2.jpg" />
+    <Content Include="Content\img\about\about-p1.jpg" />
+    <Content Include="Content\img\about\about-p2.jpg" />
+    <Content Include="Content\img\about\about-p3.jpg" />
+    <Content Include="Content\img\blog\blog-1.jpg" />
+    <Content Include="Content\img\blog\blog-10.jpg" />
+    <Content Include="Content\img\blog\blog-2.jpg" />
+    <Content Include="Content\img\blog\blog-3.jpg" />
+    <Content Include="Content\img\blog\blog-4.jpg" />
+    <Content Include="Content\img\blog\blog-5.jpg" />
+    <Content Include="Content\img\blog\blog-6.jpg" />
+    <Content Include="Content\img\blog\blog-7.jpg" />
+    <Content Include="Content\img\blog\blog-8.jpg" />
+    <Content Include="Content\img\blog\blog-9.jpg" />
+    <Content Include="Content\img\blog\blog-details\avatar\avatar-1.jpg" />
+    <Content Include="Content\img\blog\blog-details\avatar\avatar-2.jpg" />
+    <Content Include="Content\img\blog\blog-details\avatar\avatar-3.jpg" />
+    <Content Include="Content\img\blog\blog-details\blog-details-1.jpg" />
+    <Content Include="Content\img\blog\blog-details\blog-details-2.jpg" />
+    <Content Include="Content\img\blog\blog-details\blog-details-3.jpg" />
+    <Content Include="Content\img\blog\blog-details\blog-details-hero.jpg" />
+    <Content Include="Content\img\blog\blog-wide.jpg" />
+    <Content Include="Content\img\flag.jpg" />
+    <Content Include="Content\img\footer-logo.png" />
+    <Content Include="Content\img\gallery\gallery-1.jpg" />
+    <Content Include="Content\img\gallery\gallery-2.jpg" />
+    <Content Include="Content\img\gallery\gallery-3.jpg" />
+    <Content Include="Content\img\gallery\gallery-4.jpg" />
+    <Content Include="Content\images\hero-1.jpg" />
+    <Content Include="Content\images\hero-2.jpg" />
+    <Content Include="Content\images\hero-3.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\play.png" />
+    <Content Include="Content\img\room\avatar\avatar-1.jpg" />
+    <Content Include="Content\img\room\avatar\avatar-2.jpg" />
+    <Content Include="Content\img\room\room-1.jpg" />
+    <Content Include="Content\img\room\room-2.jpg" />
+    <Content Include="Content\img\room\room-3.jpg" />
+    <Content Include="Content\img\room\room-4.jpg" />
+    <Content Include="Content\img\room\room-5.jpg" />
+    <Content Include="Content\img\room\room-6.jpg" />
+    <Content Include="Content\img\room\room-b1.jpg" />
+    <Content Include="Content\img\room\room-b2.jpg" />
+    <Content Include="Content\img\room\room-b3.jpg" />
+    <Content Include="Content\img\room\room-b4.jpg" />
+    <Content Include="Content\img\room\room-details.jpg" />
+    <Content Include="Content\img\services\s-icon-1.png" />
+    <Content Include="Content\img\testimonial-logo.png" />
+    <Content Include="Content\img\video-bg.jpg" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\jquery-ui.min.js" />
+    <Content Include="Content\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\js\jquery.nice-select.min.js" />
+    <Content Include="Content\js\jquery.slicknav.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\ElegantIcons.eot" />
+    <Content Include="Content\fonts\ElegantIcons.ttf" />
+    <Content Include="Content\fonts\ElegantIcons.woff" />
+    <Content Include="Content\fonts\Flaticon.eot" />
+    <Content Include="Content\fonts\Flaticon.ttf" />
+    <Content Include="Content\fonts\Flaticon.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -220,10 +317,16 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Room\Index.cshtml" />
+    <Content Include="Views\Room\_RoomItem.cshtml" />
+    <Content Include="Views\Room\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\hero\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Reservation\" />
+    <Folder Include="Views\Rooms\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -239,9 +342,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntityDataLayer\EntityDataLayer.csproj">
+      <Project>{d43e0a64-394a-4cfe-b7a7-3a3cce6c8df8}</Project>
+      <Name>EntityDataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IdentityLayer\IdentityLayer.csproj">
       <Project>{8d150c09-5f3e-43d9-8e65-6f5e0446361f}</Project>
       <Name>IdentityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
+      <Project>{a60da8b1-6835-4878-a10a-6989c12f6bbd}</Project>
+      <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

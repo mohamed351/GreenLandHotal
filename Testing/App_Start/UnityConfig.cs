@@ -2,6 +2,7 @@ using IdentityLayer;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
+using Repositories;
 using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +10,7 @@ using Testing.App_Start;
 using Unity;
 using Unity.Injection;
 using Unity.Mvc5;
+using EntityDataLayer;
 
 namespace GreenLandHotal
 {
@@ -35,8 +37,9 @@ namespace GreenLandHotal
        new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication));
             container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(
             new InjectionConstructor(typeof(ApplicationDbContext)));
-
+            container.RegisterType<IRoomReposity, RoomRepository>(new InjectionConstructor(new GreenLandProjectEntities()));
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+
         }
     }
 }

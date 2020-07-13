@@ -104,5 +104,7 @@ namespace DesktopProjectGreenLandHotal.Rooms
             comboCategory.DisplayMember = "CategoryName";
             comboCategory.ValueMember = "ID";
         }
+
+        
     }
 }

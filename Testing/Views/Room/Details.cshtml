@@ -1,0 +1,121 @@
+﻿@model EntityDataLayer.Room
+
+@{
+
+    ViewBag.Title = "Details";
+}
+
+@section styles{
+    <style>
+        .hidden-btn{
+            display:none;
+        }
+        .booking-form  .check-date input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #ebebeb;
+            border-radius: 2px;
+            font-size: 16px;
+            color: #19191a;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding-left: 20px;
+        }
+        
+    </style>
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                @Html.Partial("_RoomItem", Model)
+            </div>
+
+            <div class="col-md-8">
+                <div>
+
+
+                    @if (Model.IsAvailable)
+                    {
+
+                    <div class="form">
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(a => a.ID,new { id="roomId" })
+
+                        <div>
+                            <div class="booking-form">
+                                <h3>Booking Your Hotel</h3>
+                                <form action="#">
+                                    <div class="check-date">
+                                        <label for="date-in">Check In:</label>
+                                        <input type="text" class="date-input" id="date-in">
+
+
+                                    </div>
+                                    <div class="check-date">
+                                        <label for="date-out">Check Out:</label>
+                                        <input type="text" class="date-input" id="date-out">
+
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                            <button id="submit" class="book-button">Book Now</button>
+
+                        
+                    }
+                    else
+                    {
+                        <p class="text-danger text-center">This Room is not Avaiable</p>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+@section scripts{
+
+<script>
+    $(document).ready(function () {
+
+        $(".date-input").datepicker({
+            minDate: 0,
+            dateFormat: 'dd MM, yy'
+        });
+        $(".date-input").datepicker({
+
+            minDate: 0,
+            dateFormat: 'dd MM, yy'
+        });
+
+        $("#submit").on("click", function () {
+
+            var roomData = {
+                __RequestVerificationToken: $("[name='__RequestVerificationToken']").val(),
+                CheckIn: $("#date-in").val(),
+                CheckOut: $("#date-out").val(),
+                RoomID:$("#roomId").val()
+            }
+            $.ajax({
+                method: "POST",
+                data: roomData,
+                url:"/Reservation/Create",
+                success: function (data) {
+                    alert("Tesing")
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+               
+            });
+        });
+
+    });
+</script>    
+    
+}

@@ -23,9 +23,12 @@ namespace EntityDataLayer
         public string UserID { get; set; }
         public int RoomID { get; set; }
         public System.DateTime ReservationDate { get; set; }
-        public System.DateTime ComingDate { get; set; }
+        public Nullable<System.DateTime> ComingDate { get; set; }
         public System.DateTime DepatureDate { get; set; }
         public bool Checkout { get; set; }
+        public bool IsDeleted { get; set; }
+        public bool IsApproved { get; set; }
+        public Nullable<System.DateTime> LeavingDate { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
