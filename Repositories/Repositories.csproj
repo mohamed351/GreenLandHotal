@@ -51,6 +51,7 @@
     <Compile Include="CategoryRepository.cs" />
     <Compile Include="ICategoriesRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IReservationRepository.cs" />
     <Compile Include="IRoomReposity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />

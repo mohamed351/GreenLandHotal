@@ -37,7 +37,11 @@ namespace GreenLandHotal
        new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication));
             container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(
             new InjectionConstructor(typeof(ApplicationDbContext)));
-            container.RegisterType<IRoomReposity, RoomRepository>(new InjectionConstructor(new GreenLandProjectEntities()));
+            var entity = new GreenLandProjectEntities();
+           
+            container.RegisterType<IRoomReposity, RoomRepository>(new InjectionConstructor(entity));
+            container.RegisterType<IReservationRepository, ReservationRepository>(new InjectionConstructor(entity));
+            container.RegisterType<ICategoriesRepository, CategoryRepository>(new InjectionConstructor(entity));
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }

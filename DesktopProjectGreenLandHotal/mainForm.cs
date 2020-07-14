@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using IdentityLayer;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
 using DesktopProjectGreenLandHotal.Users;
 using DesktopProjectGreenLandHotal.Rooms;
 using DesktopProjectGreenLandHotal.Categories;
@@ -144,6 +133,23 @@ namespace DesktopProjectGreenLandHotal
         {
             openChildForm(new EditRoomFrm());
             HideAll();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Reservation.Reservations());
+            HideAll();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

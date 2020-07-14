@@ -2348,4 +2348,23 @@ ul, ol {
     height: 46px;
     margin-top: 30px;
 }
+.book-button span{
+   color:#74D14C !important;
+
+}
+
+    .book-button-danger {
+        display: block;
+        font-size: 14px;
+        text-transform: uppercase;
+        border: 1px solid #f44336;
+        border-radius: 2px;
+        color: #f44336;
+        font-weight: 500;
+        background: transparent;
+        width: 100%;
+        height: 46px;
+    } 
+.book-button-danger i {
+        color: #f44336 !important;
 }

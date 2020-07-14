@@ -395,6 +395,8 @@ namespace Testing.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            Response.Cookies.Clear();
+           
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }

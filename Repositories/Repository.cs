@@ -33,7 +33,7 @@ namespace Repositories
 
         public IEnumerable<T> GetAll()
         {
-            return dbContext.Set<T>().ToList();
+            return dbContext.Set<T>().AsNoTracking().ToList();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
@@ -43,7 +43,7 @@ namespace Repositories
 
         public Task<IEnumerable<T>> GetByConditionAsync(Func<T, bool> func)
         {
-            return Task.FromResult<IEnumerable<T>>(dbContext.Set<T>().Where(func).ToList());
+            return Task.FromResult<IEnumerable<T>>(dbContext.Set<T>().AsNoTracking().Where(func).ToList());
         }
 
         public IEnumerable<T> GetByCondition(Func<T, bool> func)
@@ -69,6 +69,33 @@ namespace Repositories
         public Task<int> SaveChangesAsync()
         {
             return dbContext.SaveChangesAsync();
+        }
+
+        public IQueryable<T> GetByConditionIQueryable(Func<T, bool> func)
+        {
+            
+            return dbContext.Set<T>().AsNoTracking().Where(func).AsQueryable();
+        }
+
+        public T GetByIDNoTracking(Func<T, bool> IDCondtion)
+        {
+            return dbContext.Set<T>().AsNoTracking().FirstOrDefault(IDCondtion);
+        }
+
+        public IEnumerable<T> GetAllWithTracking()
+        {
+            return dbContext.Set<T>().AsNoTracking().ToList();
+        }
+        public IQueryable<T> GetIQueryable()
+        {
+            return dbContext.Set<T>().AsNoTracking();
+        }
+
+        public void EditAttach(T entity)
+        {
+            dbContext.Entry<T>(entity).State = EntityState.Detached;
+         
+
         }
     }
 }

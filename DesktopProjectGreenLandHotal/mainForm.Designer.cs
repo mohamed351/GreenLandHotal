@@ -30,9 +30,6 @@
         {
             this.sideMenu = new System.Windows.Forms.Panel();
             this.panelReservaion = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.btnReservation = new System.Windows.Forms.Button();
             this.CategoryPanel = new System.Windows.Forms.Panel();
@@ -94,45 +91,12 @@
             // 
             // panelReservaion
             // 
-            this.panelReservaion.Controls.Add(this.button13);
-            this.panelReservaion.Controls.Add(this.button12);
-            this.panelReservaion.Controls.Add(this.button11);
             this.panelReservaion.Controls.Add(this.button10);
             this.panelReservaion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelReservaion.Location = new System.Drawing.Point(0, 787);
             this.panelReservaion.Name = "panelReservaion";
             this.panelReservaion.Size = new System.Drawing.Size(241, 153);
             this.panelReservaion.TabIndex = 8;
-            // 
-            // button13
-            // 
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.Location = new System.Drawing.Point(0, 108);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(241, 36);
-            this.button13.TabIndex = 6;
-            this.button13.Text = "Delete Reservation";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.Location = new System.Drawing.Point(0, 72);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(241, 36);
-            this.button12.TabIndex = 5;
-            this.button12.Text = "Edit Reservation";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.Location = new System.Drawing.Point(0, 36);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(241, 36);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "Create Reservation";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
@@ -143,6 +107,7 @@
             this.button10.TabIndex = 3;
             this.button10.Text = "Reservations";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // btnReservation
             // 
@@ -409,6 +374,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "_";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -422,6 +388,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // mainPanel
             // 
@@ -498,9 +465,6 @@
         private System.Windows.Forms.Button btnCategories;
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.Panel panelReservaion;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button btnReservation;
     }
