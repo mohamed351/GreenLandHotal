@@ -20,19 +20,6 @@ namespace GreenLandHotal
         {
 			var container = new UnityContainer();
 
-            //    container.RegisterType<DbContext, MyDbContext>(new PerRequestLifetimeManager());
-            //    container.RegisterType<IUserStore<ApplicationUser>,
-            //        UserStore<ApplicationUser>>(new PerRequestLifetimeManager());
-            //    container.RegisterType<ApplicationUserManager>(new PerRequestLifetimeManager());
-            //    container.RegisterType<IAuthenticationManager>(
-            //        new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication))
-            //container.RegisterType<ApplicationSignInManager>(new PerRequestLifetimeManager());
-
-            //container.RegisterType<DbContext, ApplicationDbContext>();
-            //container.RegisterType<IUser, ApplicationUser>();
-            //container.RegisterType<ApplicationUserManager>();
-            //container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new UserStore<ApplicationUser>(new ApplicationDbContext));
-            //container.RegisterType<IAuthenticationManager>(new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication));
             container.RegisterType<IAuthenticationManager>(
        new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication));
             container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(
