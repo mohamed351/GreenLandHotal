@@ -13,9 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormProjectGreenLand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{A60DA8B1-6835-4878-A10A-6989C12F6BBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenLandTesting", "GreenLandTesting\GreenLandTesting.csproj", "{0A0A8E7F-84AC-46A2-8BB5-0001E0163889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreenLandTesting", "GreenLandTesting\GreenLandTesting.csproj", "{0A0A8E7F-84AC-46A2-8BB5-0001E0163889}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsUtilities", "ValidationInputs\WindowsFormsUtilities.csproj", "{7BCBBD34-AFA4-4F4B-B0AE-428C9CE7F6D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{96349AC6-C26A-4D43-9CFB-B1902721572F}"
+	ProjectSection(SolutionItems) = preProject
+		Password.txt = Password.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
