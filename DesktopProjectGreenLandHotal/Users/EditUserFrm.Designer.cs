@@ -65,7 +65,7 @@
             this.comboUsers.Location = new System.Drawing.Point(253, 48);
             this.comboUsers.Name = "comboUsers";
             this.comboUsers.Size = new System.Drawing.Size(461, 24);
-            this.comboUsers.TabIndex = 1;
+            this.comboUsers.TabIndex = 0;
             this.comboUsers.SelectionChangeCommitted += new System.EventHandler(this.comboUsers_SelectionChangeCommitted);
             this.comboUsers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboUsers_KeyDown);
             // 
@@ -98,7 +98,7 @@
             this.comborole.Location = new System.Drawing.Point(191, 177);
             this.comborole.Name = "comborole";
             this.comborole.Size = new System.Drawing.Size(335, 28);
-            this.comborole.TabIndex = 5;
+            this.comborole.TabIndex = 4;
             // 
             // txtPhone
             // 
@@ -106,7 +106,7 @@
             this.txtPhone.Location = new System.Drawing.Point(191, 144);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(336, 27);
-            this.txtPhone.TabIndex = 4;
+            this.txtPhone.TabIndex = 3;
             // 
             // txtUserName
             // 
@@ -114,7 +114,7 @@
             this.txtUserName.Location = new System.Drawing.Point(191, 111);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(336, 27);
-            this.txtUserName.TabIndex = 4;
+            this.txtUserName.TabIndex = 2;
             // 
             // txtEmail
             // 
@@ -122,7 +122,7 @@
             this.txtEmail.Location = new System.Drawing.Point(191, 79);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(336, 27);
-            this.txtEmail.TabIndex = 4;
+            this.txtEmail.TabIndex = 1;
             // 
             // txtName
             // 
@@ -130,7 +130,7 @@
             this.txtName.Location = new System.Drawing.Point(191, 46);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(336, 27);
-            this.txtName.TabIndex = 4;
+            this.txtName.TabIndex = 0;
             // 
             // label6
             // 
@@ -185,7 +185,7 @@
             this.btnEdit.Location = new System.Drawing.Point(725, 404);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(174, 44);
-            this.btnEdit.TabIndex = 5;
+            this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -197,9 +197,10 @@
             this.button2.Location = new System.Drawing.Point(13, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 30);
-            this.button2.TabIndex = 6;
+            this.button2.TabIndex = 2;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // EditUserFrm
             // 

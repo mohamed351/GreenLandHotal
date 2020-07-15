@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,7 +20,7 @@ namespace DesktopProjectGreenLandHotal
         public LoginForm()
         {
             InitializeComponent();
-            new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+          userManager =   new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +43,11 @@ namespace DesktopProjectGreenLandHotal
                 {
                     if(userManager.IsInRole(user.Id, "Admin"))
                     {
-                        MessageBox.Show("Test");
+                        Thread th = new Thread(() => Application.Run(new mainForm()));
+                        th.ApartmentState = ApartmentState.STA;
+                        th.Start();
+                        this.Close();
+                       
                     }
                     else
                     {

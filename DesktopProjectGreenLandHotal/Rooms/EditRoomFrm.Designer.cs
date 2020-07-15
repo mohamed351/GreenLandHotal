@@ -66,7 +66,7 @@
             this.btnEdit.Location = new System.Drawing.Point(570, 482);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(165, 45);
-            this.btnEdit.TabIndex = 10;
+            this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -115,7 +115,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(514, 434);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room Information";
             // 
@@ -134,7 +134,7 @@
             this.txtPrice.Location = new System.Drawing.Point(201, 228);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(286, 27);
-            this.txtPrice.TabIndex = 13;
+            this.txtPrice.TabIndex = 4;
             // 
             // checkIsEmpty
             // 
@@ -143,7 +143,7 @@
             this.checkIsEmpty.Location = new System.Drawing.Point(201, 360);
             this.checkIsEmpty.Name = "checkIsEmpty";
             this.checkIsEmpty.Size = new System.Drawing.Size(91, 24);
-            this.checkIsEmpty.TabIndex = 12;
+            this.checkIsEmpty.TabIndex = 7;
             this.checkIsEmpty.Text = "IsEmpty";
             this.checkIsEmpty.UseVisualStyleBackColor = true;
             // 
@@ -172,7 +172,7 @@
             0});
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(286, 27);
-            this.txtRoomNumber.TabIndex = 10;
+            this.txtRoomNumber.TabIndex = 0;
             this.txtRoomNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -186,7 +186,7 @@
             this.checkIsAvaiable.Location = new System.Drawing.Point(201, 321);
             this.checkIsAvaiable.Name = "checkIsAvaiable";
             this.checkIsAvaiable.Size = new System.Drawing.Size(111, 24);
-            this.checkIsAvaiable.TabIndex = 9;
+            this.checkIsAvaiable.TabIndex = 6;
             this.checkIsAvaiable.Text = "IsAvaliable";
             this.checkIsAvaiable.UseVisualStyleBackColor = true;
             // 
@@ -206,7 +206,7 @@
             0});
             this.txtNumberOfBeds.Name = "txtNumberOfBeds";
             this.txtNumberOfBeds.Size = new System.Drawing.Size(286, 27);
-            this.txtNumberOfBeds.TabIndex = 7;
+            this.txtNumberOfBeds.TabIndex = 5;
             this.txtNumberOfBeds.Value = new decimal(new int[] {
             1,
             0,
@@ -228,7 +228,7 @@
             this.txtpath.Location = new System.Drawing.Point(201, 186);
             this.txtpath.Name = "txtpath";
             this.txtpath.Size = new System.Drawing.Size(286, 27);
-            this.txtpath.TabIndex = 5;
+            this.txtpath.TabIndex = 3;
             // 
             // btnImage
             // 
@@ -238,7 +238,7 @@
             this.btnImage.Location = new System.Drawing.Point(30, 186);
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(165, 27);
-            this.btnImage.TabIndex = 4;
+            this.btnImage.TabIndex = 8;
             this.btnImage.Text = "Image";
             this.btnImage.UseVisualStyleBackColor = true;
             this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
@@ -287,7 +287,7 @@
             0});
             this.txtPeopleCapacity.Name = "txtPeopleCapacity";
             this.txtPeopleCapacity.Size = new System.Drawing.Size(286, 27);
-            this.txtPeopleCapacity.TabIndex = 0;
+            this.txtPeopleCapacity.TabIndex = 1;
             this.txtPeopleCapacity.Value = new decimal(new int[] {
             1,
             0,
@@ -319,7 +319,7 @@
             0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 27);
-            this.numericUpDown1.TabIndex = 13;
+            this.numericUpDown1.TabIndex = 0;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
             0,
@@ -335,7 +335,7 @@
             this.btnFind.Location = new System.Drawing.Point(307, 77);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(84, 27);
-            this.btnFind.TabIndex = 14;
+            this.btnFind.TabIndex = 1;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -354,7 +354,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditRoomFrm";
             this.Text = "EditRoomFrm";
             this.Load += new System.EventHandler(this.EditRoomFrm_Load);

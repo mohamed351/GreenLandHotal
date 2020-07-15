@@ -110,7 +110,7 @@
             this.groupBox1.Location = new System.Drawing.Point(200, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(612, 293);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Information";
             // 
@@ -136,28 +136,28 @@
             this.txtPhone.Location = new System.Drawing.Point(191, 144);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(336, 27);
-            this.txtPhone.TabIndex = 4;
+            this.txtPhone.TabIndex = 3;
             // 
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(191, 111);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(336, 27);
-            this.txtUserName.TabIndex = 4;
+            this.txtUserName.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(191, 79);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(336, 27);
-            this.txtEmail.TabIndex = 4;
+            this.txtEmail.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(191, 46);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(336, 27);
-            this.txtName.TabIndex = 4;
+            this.txtName.TabIndex = 0;
             // 
             // label6
             // 
@@ -175,7 +175,7 @@
             this.btnCreate.Location = new System.Drawing.Point(664, 351);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(259, 51);
-            this.btnCreate.TabIndex = 4;
+            this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -187,7 +187,7 @@
             this.btnClose.Location = new System.Drawing.Point(12, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(66, 35);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);

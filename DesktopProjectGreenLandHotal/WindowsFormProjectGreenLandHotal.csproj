@@ -125,12 +125,6 @@
     <Compile Include="Reservation\Reservations.Designer.cs">
       <DependentUpon>Reservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rooms\DeleteRoomFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rooms\DeleteRoomFrm.Designer.cs">
-      <DependentUpon>DeleteRoomFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rooms\EditRoomFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,9 +204,6 @@
     <EmbeddedResource Include="Rooms\CreateRoomFrm.resx">
       <DependentUpon>CreateRoomFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rooms\DeleteRoomFrm.resx">
-      <DependentUpon>DeleteRoomFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Rooms\EditRoomFrm.resx">
       <DependentUpon>EditRoomFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +257,17 @@
   <ItemGroup>
     <None Include="Resources\greenLand.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservation.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

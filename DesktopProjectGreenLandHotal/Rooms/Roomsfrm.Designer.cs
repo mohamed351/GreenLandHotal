@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.RoomsGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.RoomsGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(9, 55);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1002, 22);
-            this.txtSearch.TabIndex = 5;
             // 
             // btnClose
             // 
@@ -60,10 +52,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.RoomsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RoomsGridView.Location = new System.Drawing.Point(9, 83);
+            this.RoomsGridView.Location = new System.Drawing.Point(9, 53);
             this.RoomsGridView.Name = "RoomsGridView";
             this.RoomsGridView.RowTemplate.Height = 24;
-            this.RoomsGridView.Size = new System.Drawing.Size(1002, 496);
+            this.RoomsGridView.Size = new System.Drawing.Size(1002, 526);
             this.RoomsGridView.TabIndex = 3;
             // 
             // Roomsfrm
@@ -72,7 +64,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(58)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(1020, 591);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.RoomsGridView);
             this.Name = "Roomsfrm";
@@ -80,13 +71,10 @@
             this.Load += new System.EventHandler(this.Roomsfrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RoomsGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView RoomsGridView;
     }

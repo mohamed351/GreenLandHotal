@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.checkIsEmpty = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtRoomNumber = new System.Windows.Forms.NumericUpDown();
@@ -41,17 +43,15 @@
             this.comboCategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPeopleCapacity = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.txtPrice = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRoomNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfBeds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeopleCapacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,13 +80,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room Information";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(136, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Price :";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(201, 228);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(286, 27);
+            this.txtPrice.TabIndex = 4;
+            // 
             // checkIsEmpty
             // 
             this.checkIsEmpty.AutoSize = true;
             this.checkIsEmpty.Location = new System.Drawing.Point(201, 360);
             this.checkIsEmpty.Name = "checkIsEmpty";
             this.checkIsEmpty.Size = new System.Drawing.Size(91, 24);
-            this.checkIsEmpty.TabIndex = 12;
+            this.checkIsEmpty.TabIndex = 7;
             this.checkIsEmpty.Text = "IsEmpty";
             this.checkIsEmpty.UseVisualStyleBackColor = true;
             // 
@@ -114,7 +130,7 @@
             0});
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(286, 27);
-            this.txtRoomNumber.TabIndex = 10;
+            this.txtRoomNumber.TabIndex = 0;
             this.txtRoomNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -127,7 +143,7 @@
             this.checkIsAvaiable.Location = new System.Drawing.Point(201, 321);
             this.checkIsAvaiable.Name = "checkIsAvaiable";
             this.checkIsAvaiable.Size = new System.Drawing.Size(111, 24);
-            this.checkIsAvaiable.TabIndex = 9;
+            this.checkIsAvaiable.TabIndex = 6;
             this.checkIsAvaiable.Text = "IsAvaliable";
             this.checkIsAvaiable.UseVisualStyleBackColor = true;
             // 
@@ -146,7 +162,7 @@
             0});
             this.txtNumberOfBeds.Name = "txtNumberOfBeds";
             this.txtNumberOfBeds.Size = new System.Drawing.Size(286, 27);
-            this.txtNumberOfBeds.TabIndex = 7;
+            this.txtNumberOfBeds.TabIndex = 5;
             this.txtNumberOfBeds.Value = new decimal(new int[] {
             1,
             0,
@@ -168,7 +184,7 @@
             this.txtpath.Location = new System.Drawing.Point(201, 186);
             this.txtpath.Name = "txtpath";
             this.txtpath.Size = new System.Drawing.Size(286, 27);
-            this.txtpath.TabIndex = 5;
+            this.txtpath.TabIndex = 3;
             // 
             // btnImage
             // 
@@ -224,22 +240,12 @@
             0});
             this.txtPeopleCapacity.Name = "txtPeopleCapacity";
             this.txtPeopleCapacity.Size = new System.Drawing.Size(286, 27);
-            this.txtPeopleCapacity.TabIndex = 0;
+            this.txtPeopleCapacity.TabIndex = 1;
             this.txtPeopleCapacity.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DesktopProjectGreenLandHotal.Properties.Resources.greenLand;
-            this.pictureBox1.Location = new System.Drawing.Point(564, 180);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 183);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
@@ -248,7 +254,7 @@
             this.button2.Location = new System.Drawing.Point(30, 21);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 27);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 1;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -260,26 +266,20 @@
             this.btnCreate.Location = new System.Drawing.Point(591, 487);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(165, 45);
-            this.btnCreate.TabIndex = 6;
+            this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // txtPrice
+            // pictureBox1
             // 
-            this.txtPrice.Location = new System.Drawing.Point(201, 228);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(286, 27);
-            this.txtPrice.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(136, 230);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 20);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Price :";
+            this.pictureBox1.Image = global::DesktopProjectGreenLandHotal.Properties.Resources.greenLand;
+            this.pictureBox1.Location = new System.Drawing.Point(564, 180);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(192, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // CreateRoomFrm
             // 
@@ -298,11 +298,11 @@
             this.Load += new System.EventHandler(this.CreateRoomFrm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRoomNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberOfBeds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeopleCapacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
