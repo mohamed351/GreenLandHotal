@@ -22,7 +22,9 @@
     <link href="~/Content/css/magnific-popup.css" rel="stylesheet" />
     <link href="~/Content/css/slicknav.min.css" rel="stylesheet" />
     <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
     @RenderSection("styles", required: false)
+
 </head>
 <body>
     <!-- Page Preloder -->
@@ -166,8 +168,20 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  
+
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="avaiable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content" id="avaliabelContainer">
+               
+             
+               
             </div>
         </div>
     </div>
@@ -234,11 +248,11 @@
                 tdroomNumber.append(anchor);
 
                 let tdDepartureDate = document.createElement("td");
-                tdDepartureDate.innerText = moment(i.DepartureDate).format('l'); ;
+                tdDepartureDate.innerText = moment(i.DepartureDate).format('l');;
 
                 let tdReservationDate = document.createElement("td");
 
-                tdReservationDate.innerText = moment(i.ReservationDate).format('l'); 
+                tdReservationDate.innerText = moment(i.ReservationDate).format('l');
 
                 let tdcategory = document.createElement("td");
                 tdcategory.innerText = i.category;

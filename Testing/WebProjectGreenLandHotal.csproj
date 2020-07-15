@@ -197,6 +197,7 @@
     <Compile Include="Hubs\ReservationHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CheckAvailableViewModel.cs" />
     <Compile Include="ViewModels\UserManagerViewModels.cs" />
     <Compile Include="ViewModels\IdentityViewModels.cs" />
     <Compile Include="ViewModels\HttpHelpers.cs" />
@@ -352,6 +353,7 @@
     <Content Include="Views\Room\Index.cshtml" />
     <Content Include="Views\Room\_RoomItem.cshtml" />
     <Content Include="Views\Room\Details.cshtml" />
+    <Content Include="Views\Room\_CategoryItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

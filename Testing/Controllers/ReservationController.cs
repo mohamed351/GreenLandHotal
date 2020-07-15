@@ -17,11 +17,13 @@ namespace GreenLandHotal.Controllers
     {
         private readonly IReservationRepository _reservation;
         private readonly IRoomReposity roomReposity;
+   
 
         public ReservationController(IReservationRepository reservation, IRoomReposity roomReposity)
         {
             this._reservation = reservation;
             this.roomReposity = roomReposity;
+           
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -56,9 +58,9 @@ namespace GreenLandHotal.Controllers
             if (_reservation.SaveChanges() > 0)
             {
 
-                //send Data to Desktop Application
-                var Ihub = GlobalHost.ConnectionManager.GetHubContext<ReservationHub>();
-                Ihub.Clients.All.SendMessage(reservation.RoomID, reservation.UserID,reservation.ReservationDate,reservation.DepatureDate);
+                //send Data to Desktop Application // if we using signalR
+                //var Ihub = GlobalHost.ConnectionManager.GetHubContext<ReservationHub>();
+                //Ihub.Clients.All.SendMessage(reservation.RoomID, reservation.UserID,reservation.ReservationDate,reservation.DepatureDate);
 
                 this.roomReposity.SaveChanges();
                 return Json(new { result = true });

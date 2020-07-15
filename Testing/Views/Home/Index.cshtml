@@ -69,10 +69,12 @@
                 <div class="about-pic">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="img/about/about-1.jpg" alt="">
+                          
+                            <img src="~/Content/img/about/about-1.jpg" />
                         </div>
                         <div class="col-sm-6">
-                            <img src="img/about/about-2.jpg" alt="">
+
+                            <img src="~/Content/img/about/about-2.jpg" />
                         </div>
                     </div>
                 </div>
@@ -151,7 +153,8 @@
                 method: "GET",
                 url: "/Room/GetAvaliableRooms?categoryId=" + $("#room").val() + "&guests=" + $("#Guestes").val(),
                 success: function (data) {
-                    console.log(data);
+                    $("#avaliabelContainer").html(data);
+                    $("#avaiable").modal("show");
                 }
                
 
